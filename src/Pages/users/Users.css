@@ -10,9 +10,10 @@
     padding: 0.5rem;
     border-radius: 1rem;
     line-height: 2rem;
-    background: #00243d;
+    background: white;
     flex-wrap: wrap;
     border-width: 0.1px;
+    border: 1px solid black;
   }
   
   .user-div-A h2 {
@@ -72,13 +73,13 @@
   }
   
   .user-search-div input {
-    color: white;
+    color: black;
     background: none;
     padding: 1rem;
     border-radius: 5rem;
-    border: none;
+    border: 1px solid black;
     font-size: medium;
-    background: #00243d;
+    background:black;
     height: 40px;
     line-height: 28px;
     padding: 0 1rem;
@@ -111,3 +112,4 @@
     border-radius: 5rem;
     border: 1px solid;
   }
+  

@@ -1,14 +1,12 @@
 import { useContext } from "react";
-import { AuthContext } from "../../../context/AuthContext";
-
-import { AvatarOptions } from "../../../AvatarOptions";
-
-import "../avatar/avatar.css";
+import "./Avatar.css";
 import { useState } from "react";
 import { AvatarAlert, AvatarUpdate } from "../../../ToastUtils";
+import { AuthenticationContext } from "../../../context/AuthenticationContext";
+import { AvatarOptions } from "../../../AvatarOptions";
 
 export const Avatar = () => {
-  const { setUser, setAvatar } = useContext(AuthContext);
+  const { setUser, setAvatar } = useContext(AuthenticationContext);
 
   const [isAvatar, setIsAvatar] = useState("");
 

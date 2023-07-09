@@ -1,14 +1,15 @@
+
 import { useContext } from "react";
-import { AuthContext } from "../../context/AuthContext";
+import { AuthenticationContext } from "../../context/AuthenticationContext";
 import { DataContext } from "../../context/DataContext";
 import { Avatar } from "./avatar/Avatar";
 
-import "./edituser.css";
+import "./EditUser.css";
 
 export const EditUser = () => {
   const { editUser } = useContext(DataContext);
   const { user, setUser, setEditUserModal, avatar, setAvatar } =
-    useContext(AuthContext);
+    useContext(AuthenticationContext);
 
   const handleInput = (e) => {
     const { name, value } = e.target;

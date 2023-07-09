@@ -11,7 +11,7 @@ import { allPosts } from "../utils/postutils";
 import { getAllUsers } from "../utils/userutils";
 import { datareducer } from "../reducer/datareducer";
 
-import { AuthContext } from "./AuthContext";
+
 
 import {
   LikePost,
@@ -24,6 +24,7 @@ import {
   UnFollowUser,
   UpdateUser,
 } from "../ToastUtils";
+import { AuthenticationContext } from "./AuthenticationContext";
 
 export const DataContext = createContext();
 
@@ -34,7 +35,7 @@ export const DataProvider = ({ children }) => {
     bookmarks: [],
   });
 
-  const { user, setUser } = useContext(AuthContext);
+  const { user, setUser } = useContext(AuthenticationContext);
 
   const [trending, setTrending] = useState(false);
   const [latest, setLatest] = useState(false);
@@ -111,6 +112,7 @@ export const DataProvider = ({ children }) => {
           headers: { authorization: encodedToken },
         }
       );
+      console.log(res.data.bookmarks);
       dispatch({ type: "ALL-BOOKMARKS", payload: res?.data?.bookmarks });
       AddInBookmark();
     } catch (error) {

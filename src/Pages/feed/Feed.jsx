@@ -4,11 +4,11 @@ import { DataContext } from "../../context/DataContext";
 import { AddPost } from "../../component/addpost/addPost";
 import { EditPost } from "./EditPost";
 
-import "../feed/feed.css";
-import "../explore/explore.css";
+import "./Feed.css";
+import "../explore/Explore.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
-import { AuthContext } from "../../context/AuthContext";
+import { faTrash, faHeart } from "@fortawesome/free-solid-svg-icons";
+import { AuthenticationContext } from "../../context/AuthenticationContext";
 
 export const Feed = () => {
   const {
@@ -28,7 +28,7 @@ export const Feed = () => {
     editModal,
     setEditModal,
   } = useContext(DataContext);
-  const { user } = useContext(AuthContext);
+  const { user } = useContext(AuthenticationContext);
 
   const encodedToken = localStorage.getItem("token");
 
@@ -63,15 +63,15 @@ export const Feed = () => {
           <div className="sort-parent">
             <p onClick={handleTrending}>
               {" "}
-              {trending ? "Remove Filter" : "Filter Trending"}{" "}
+              {trending ? "Remove Filter" : "Buzzing Posts"}{" "}
             </p>
             <p>|</p>
             <p onClick={handleLatest}>
               {" "}
-              {latest ? "Remove Filter" : "Show Latest"}{" "}
+              {latest ? "Remove Filter" : "Newest Posts"}{" "}
             </p>
           </div>
-          <div style={{ width: "43rem" }}>
+          <div style={{ width: "43rem", backgroundColor: "#252525" }}>
             {recentPosts.map((item) => {
               return (
                 <div className="explore-A" key={item?._id}>
@@ -160,8 +160,11 @@ export const Feed = () => {
                         <i
                           title="comment"
                           className="fa-regular fa-comment"
+                          style={{color: "blueviolet"}}
                         ></i>
 
+                        {/* <i className="fa-regular fa-bookmark"></i>
+                        <i className="fa-solid fa-bookmark"></i> */}
                         <i
                           title={
                             !inBookmark(item?._id)
@@ -169,7 +172,7 @@ export const Feed = () => {
                               : "remove from bookmark"
                           }
                           onClick={() =>
-                            !inBookmark(item?._id)
+                           !inBookmark(item?._id)
                               ? addToBookmark(encodedToken, item?._id)
                               : removeFromBookmark(encodedToken, item?._id)
                           }
@@ -179,6 +182,7 @@ export const Feed = () => {
                               : "fa-solid fa-bookmark"
                           }
                         ></i>
+
                       </div>
                     </div>
                   </div>
@@ -204,3 +208,22 @@ export const Feed = () => {
     </>
   );
 };
+
+
+{/* <i
+title={
+    !inBookmark(item?._id)
+      ? "add to bookmark"
+      : "remove from bookmark"
+  }
+  onClick={() =>
+    !inBookmark(item?._id)
+      ? addToBookmark(encodedToken, item?._id)
+      : removeFromBookmark(encodedToken, item?._id)
+  }
+  className={
+    !inBookmark(item?._id)
+      ? "fa-regular fa-bookmark"
+      : "fa-solid fa-bookmark"
+  }
+></i> */}

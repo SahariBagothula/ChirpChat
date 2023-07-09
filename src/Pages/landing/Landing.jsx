@@ -1,11 +1,11 @@
-import "../landing/landing.css";
+import "./Landing.css";
 
 import { NavLink, useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import { AuthContext } from "../../context/AuthContext";
+import { AuthenticationContext } from "../../context/AuthenticationContext";
 
 export const Landing = () => {
-  const { userSignIn } = useContext(AuthContext);
+  const { userSignIn } = useContext(AuthenticationContext);
   const navigate = useNavigate();
 
   const handleGuest = () => {
@@ -18,11 +18,12 @@ export const Landing = () => {
 
   return (
     <div className="landing-parent-div">
-      <img src="landing img.svg" alt="landing" />
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlpnKaIL-cjHY8fSCp1e6_I4sHGHOzJf8LS9KCWepCr1jacKPNt_WBuKDoHg9rxeGgghw&usqp=CAU" alt="landing"/>
       <div className="landing-container">
-        <h1 className="landing-heading">Welcome to Pixyverse </h1>
+        <h1 className="landing-heading">ChirpChat</h1>
+        <h3>Connecting people across the globe...</h3>
 
-        <h1>
+        {/* <h1>
           FOLLOW{" "}
           <span className="landing-sub-title"> PEOPLE AROUND THE GLOBE </span>
         </h1>
@@ -31,7 +32,7 @@ export const Landing = () => {
         </h1>
         <h1>
           SHARE <span className="landing-sub-title">WHAT'S IN MIND</span>
-        </h1>
+        </h1> */}
 
         <div className="landing-btn-div">
           <NavLink to="/signup">

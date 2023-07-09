@@ -63,7 +63,7 @@ export const EditPost = ({ postId }) => {
           style={{ height: "20rem", width: "30rem", borderRadius: "5px" }}
         />
       </div>
-      <button
+      <button style={{backgroundColor: "black"}}
         onClick={() =>
           editPost(post._id, isEditPost, encodedToken, setEditModal)
         }

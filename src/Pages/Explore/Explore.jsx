@@ -1,12 +1,12 @@
 import { useContext } from "react";
 import { DataContext } from "../../context/DataContext";
 
-import "../explore/explore.css";
+import "./Explore.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 import { EditPost } from "../feed/EditPost";
-import { AuthContext } from "../../context/AuthContext";
+import { AuthenticationContext } from "../../context/AuthenticationContext";
 
 export const Explore = () => {
   const {
@@ -21,7 +21,7 @@ export const Explore = () => {
     editModal,
     setEditModal,
   } = useContext(DataContext);
-  const { user } = useContext(AuthContext);
+  const { user } = useContext(AuthenticationContext);
 
   const encodedToken = localStorage.getItem("token");
 

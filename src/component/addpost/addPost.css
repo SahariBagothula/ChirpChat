@@ -2,11 +2,10 @@
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    border: solid gray;
+    border: solid black;
     border-top: none;
     border-width: 0.000001px;
-    background: #00243d;
-    color: white;
+    background: white;
     min-height: 6rem;
     justify-content: space-between;
     padding: 0.5rem;
@@ -65,7 +64,7 @@
     width: 5rem;
     height: 1.7rem;
     font-size: 14px;
-    background: crimson;
+    background: blueviolet;
     color: whitesmoke;
     border-radius: 5px;
     border: none;

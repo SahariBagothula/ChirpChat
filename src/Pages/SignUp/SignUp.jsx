@@ -1,16 +1,16 @@
-import "../signup/signup.css";
+import "./SignUp.css";
 
 import { useState, useContext } from "react";
 
 import { NavLink, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../context/AuthContext";
 import { FillDetails, PasswordNotMached } from "../../ToastUtils";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
+import { AuthenticationContext } from "../../context/AuthenticationContext";
 
 export const SignUp = () => {
-  const { userSignUp } = useContext(AuthContext);
+  const { userSignUp } = useContext(AuthenticationContext);
   const [isDisable, setIsDisable] = useState(true);
 
   const [signupDetails, setSignUpDetails] = useState({
@@ -60,7 +60,7 @@ export const SignUp = () => {
             onChange={(e) =>
               setSignUpDetails({ ...signupDetails, name: e.target.value })
             }
-            placeholder="Vishal Soni"
+            placeholder="Jennifer Winget"
             className="signup-input"
             type="text"
           />
@@ -72,7 +72,7 @@ export const SignUp = () => {
             onChange={(e) =>
               setSignUpDetails({ ...signupDetails, username: e.target.value })
             }
-            placeholder="vishalsoni"
+            placeholder="jenniferwinget"
             className="signup-input"
             type="text"
           />
@@ -84,7 +84,7 @@ export const SignUp = () => {
             onChange={(e) =>
               setSignUpDetails({ ...signupDetails, email: e.target.value })
             }
-            placeholder="something@whatever.com"
+            placeholder="jenniferwinget@gmail.com"
             className="signup-input"
             type="email"
           />

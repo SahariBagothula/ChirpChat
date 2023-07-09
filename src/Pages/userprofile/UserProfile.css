@@ -14,7 +14,7 @@
     padding: 0.5rem;
     gap: 1rem;
     border-bottom: 0.000001px solid gray;
-    background: #00243d;
+    background: white;
     border-top: none;
   }
   
@@ -55,17 +55,17 @@
   }
   
   .userprofile-btn {
-    background: #00243d;
+    background: white;
     padding: 0.6rem;
     color: whitesmoke;
-    border: 0.8px solid #00243d;
+    border: 0.8px solid black;
     border-radius: 5rem;
     cursor: pointer;
   }
   
   .userprofile-btn:hover {
     transition: 0.2s;
-    background: #003153;
+    background: white;
     border: 0.8px solid whitesmoke;
   }
   
@@ -230,7 +230,7 @@
     max-width: 35rem;
     width: 100%;
     max-height: 80vh;
-    background-color: #00243d;
+    background-color: white;
   }
   
   .avatar-heading {
@@ -241,7 +241,5 @@
       rgba(2, 245, 255, 1) 100.2%
     );
     background-size: 300% auto;
-    animation: gradientAnimation 5s linear infinite;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
+   
   }

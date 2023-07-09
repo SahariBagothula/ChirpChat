@@ -1,10 +1,11 @@
 import { useContext, useState } from "react";
-import "../users/user.css";
+import "./Users.css"
 
 import { DataContext } from "../../context/DataContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { AuthContext } from "../../context/AuthContext";
+import { AuthenticationContext } from "../../context/AuthenticationContext";
+
 
 export const Users = () => {
   const {
@@ -12,7 +13,7 @@ export const Users = () => {
     followUser,
     unfollowUser,
   } = useContext(DataContext);
-  const { user } = useContext(AuthContext);
+  const { user } = useContext(AuthenticationContext);
 
   const [searchUser, setSearchUser] = useState("");
 
@@ -42,7 +43,7 @@ export const Users = () => {
         <input
           value={searchUser}
           onChange={(e) => setSearchUser(e.target.value)}
-          placeholder="Search Pixyverse"
+          placeholder="Search"
         />{" "}
       </div>
 
@@ -116,3 +117,4 @@ export const Users = () => {
     </div>
   );
 };
+//#00243d

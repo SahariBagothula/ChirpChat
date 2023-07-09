@@ -58,7 +58,7 @@ export const SignIn = () => {
               onChange={(e) =>
                 setSignInDetails({ ...signinDetails, username: e.target.value })
               }
-              placeholder="tonystark"
+              placeholder="jenniferwinget"
               className="signin-input"
               type="text"
             />

@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
-import { AuthContext } from "../../context/AuthContext";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -11,9 +10,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import { DataContext } from "../../context/DataContext";
+import { AuthenticationContext } from "../../context/AuthenticationContext";
 
 export const SideBar = () => {
-  const { signOut, user } = useContext(AuthContext);
+  const { signOut, user } = useContext(AuthenticationContext);
   const { allBookmark } = useContext(DataContext);
   const encodedToken = localStorage.getItem("token");
 

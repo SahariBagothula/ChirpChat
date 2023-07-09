@@ -1,13 +1,13 @@
 import { Route, Routes } from "react-router-dom";
 
 import { RequireAuth } from "../utils/RequireAuth";
-import { Landing } from "../pages/landing/Landing";
-import { Feed } from "../pages/feed/Feed";
-import { Explore } from "../pages/explore/Explore";
-import { Bookmark } from "../pages/bookmark/BookMark";
-import { UserProfile } from "../pages/userprofile/UserProfile";
-import { SignIn } from "../pages/signin/SignIn";
-import { SignUp } from "../pages/signup/SignUp";
+import { Landing } from "../Pages/landing/Landing";
+import { Feed } from "../Pages/feed/Feed";
+import { Bookmark } from "../Pages/bookmark/BookMark";
+import { Explore } from "../Pages/explore/Explore";
+import { SignIn } from "../Pages/SignIn/SignIn";
+import { SignUp } from "../Pages/SignUp/SignUp";
+import { UserProfile } from "../Pages/userprofile/UserProfile";
 
 export const AppRouts = () => {
   return (

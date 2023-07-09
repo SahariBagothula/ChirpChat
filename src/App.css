@@ -8,8 +8,8 @@
 }
 
 body {
-  background-color: #003153;
-  color: whitesmoke;
+  background-color: white;
+  color: blueviolet;
 }
 
 @media (prefers-reduced-motion: no-preference) {

@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { DataContext } from "../../context/DataContext";
 
-import { AuthContext } from "../../context/AuthContext";
+
 import { EditUser } from "./EditUser";
 import { EditPost } from "../feed/EditPost";
 
@@ -11,7 +11,8 @@ import {
   faLink,
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
-import "../userprofile/userprofile.css";
+import "./UserProfile.css";
+import { AuthenticationContext } from "../../context/AuthenticationContext";
 
 export const UserProfile = () => {
   const {
@@ -26,7 +27,7 @@ export const UserProfile = () => {
     editModal,
     setEditModal,
   } = useContext(DataContext);
-  const { user, editUserModal, setEditUserModal } = useContext(AuthContext);
+  const { user, editUserModal, setEditUserModal } = useContext(AuthenticationContext);
 
   const showMyPosts = posts.filter(
     ({ username }) => username === user?.username

@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { DataContext } from "../../context/DataContext";
-import "../addpost/addpost.css";
+import "./addPost.css";
 
 import axios from "axios";
 
@@ -58,7 +58,7 @@ export const AddPost = () => {
         <div>
           <textarea
             className="add-post-input"
-            placeholder="what's happning?"
+            placeholder="Post here..."
             type="text"
             name="content"
             value={newPost?.content}
