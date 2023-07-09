@@ -7,7 +7,7 @@ import { FillDetails } from "../../ToastUtils";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
-import { AuthenticationContext } from "../../Contexts/AuthenticationContext";
+import { AuthenticationContext } from "../../context/AuthenticationContext";
 
 export const SignIn = () => {
   const { userSignIn } = useContext(AuthenticationContext);

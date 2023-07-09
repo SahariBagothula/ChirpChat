@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { Toaster } from "react-hot-toast";
 
 
-import { AuthenticationContext } from "./Contexts/AuthenticationContext";
+import { AuthenticationContext } from "./context/AuthenticationContext";
 import { AppRouts } from "./routes/Route";
 import { SideBar } from "./Pages/sidebar/SideBar";
 import { Users } from "./Pages/users/Users";

@@ -5,8 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { makeServer } from "./server";
 import { BrowserRouter } from "react-router-dom";
-import { DataProvider, DataContext } from './Contexts/DataContext';
-import { AuthenticationProvider, AuthenticationContext } from './Contexts/AuthenticationContext';
+import { DataProvider, DataContext } from './context/DataContext';
+import { AuthenticationProvider, AuthenticationContext } from './context/AuthenticationContext';
 
 
 // Call make Server
