@@ -1,19 +1,28 @@
 .App {
   text-align: center;
-}
-
-.mainCard {
+  font-family: "Noto Sans", sans-serif;
+  flex-wrap: wrap;
   display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
 }
 
-.middleNavbarCard {
-  width: 60vw;
+body {
+  background-color: #003153;
+  color: whitesmoke;
 }
 
-.hr {
-  width: 10px;
-  height: 100%;
-  background-color: black;
-  border: none;
-  margin: 1rem 0;
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

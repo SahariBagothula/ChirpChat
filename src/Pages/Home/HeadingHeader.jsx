@@ -14,9 +14,6 @@ const HeadingHeader = () => {
           </div>
           <div className="nav-right-side">
             <div>
-            light mode-dark mode
-            </div>
-            <div>
               <CgProfile />
             </div>
           </div>

@@ -1,0 +1,113 @@
+.user-main-div {
+    margin-top: 0.5rem;
+    position: sticky;
+    height: fit-content;
+    top: 0;
+  }
+  
+  .user-div-A {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    line-height: 2rem;
+    background: #00243d;
+    flex-wrap: wrap;
+    border-width: 0.1px;
+  }
+  
+  .user-div-A h2 {
+    text-align: left;
+    font-size: larger;
+    font-weight: 700;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+  }
+  
+  .user-div-B {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 0.3rem;
+  }
+  .user-div-B:hover {
+    transition: 0.2s;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.058);
+  }
+  
+  .user-div-C {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .user-div-D {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    letter-spacing: 1px;
+    line-height: 1.5;
+  }
+  
+  .user-btn {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 1rem;
+    width: 5rem;
+    font-weight: 600;
+    color: #252525;
+    background: white;
+  }
+  
+  .user-search-div {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    line-height: 28px;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+  }
+  
+  .user-search-div input {
+    color: white;
+    background: none;
+    padding: 1rem;
+    border-radius: 5rem;
+    border: none;
+    font-size: medium;
+    background: #00243d;
+    height: 40px;
+    line-height: 28px;
+    padding: 0 1rem;
+    padding-left: 2.5rem;
+    width: 100%;
+  }
+  
+  .user-search-div input::placeholder {
+    color: rgba(245, 245, 245, 0.575);
+  }
+  
+  .user-search-div input:focus,
+  input:hover {
+    outline: none;
+  }
+  
+  .search-icon {
+    margin-top: 0.4rem;
+    position: absolute;
+    left: 1rem;
+    fill: #9e9ea7;
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  .profilePicture {
+    align-items: center;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 5rem;
+    border: 1px solid;
+  }

@@ -1,25 +1,26 @@
-import './App.css';
-import { Routes, Route } from "react-router-dom";
+import "./App.css";
+import { useContext } from "react";
 
-import HomeDisplay from './Pages/Home/HomeDisplay';
-import ExplorePosts from './Pages/Explore/ExplorePosts';
-import BookmarkedPosts from './Pages/Bookmarks/BookmarkedPosts';
-import LikedPosts from './Pages/LikedPosts/LikedPosts';
+
+
+import { Toaster } from "react-hot-toast";
+
+
+import { AuthenticationContext } from "./Contexts/AuthenticationContext";
+import { AppRouts } from "./routes/Route";
+import { SideBar } from "./Pages/sidebar/SideBar";
+import { Users } from "./Pages/users/Users";
 
 function App() {
-
+  const { isSignIn } = useContext(AuthenticationContext);
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={<HomeDisplay/>}></Route>
-        <Route path="/home" element={<HomeDisplay/>}></Route>
-        <Route path="/explore" element={<ExplorePosts/>}></Route>
-        <Route path="/bookmarkedPosts" element={<BookmarkedPosts/>}></Route>
-        <Route path="/likedPosts" element={<LikedPosts/>}></Route>
-      </Routes>
+      <Toaster position="bottom-right" reverseOrder={false} />
+      {isSignIn && <SideBar />}
+      <AppRouts />
+      {isSignIn && <Users />}
     </div>
   );
-
 }
 
 export default App;

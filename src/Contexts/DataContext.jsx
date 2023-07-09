@@ -1,58 +1,256 @@
-import { createContext, useEffect, useReducer } from "react";
 import axios from "axios";
+
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useReducer,
+  useState,
+} from "react";
+import { allPosts } from "../utils/postutils";
+import { getAllUsers } from "../utils/userutils";
+import { datareducer } from "../reducer/datareducer";
+
+import { AuthContext } from "./AuthContext";
+
+import {
+  LikePost,
+  DisLikePost,
+  HandleApiError,
+  DeletePost,
+  AddInBookmark,
+  RemoveBookmark,
+  FollowUser,
+  UnFollowUser,
+  UpdateUser,
+} from "../ToastUtils";
 
 export const DataContext = createContext();
 
-export const DataProvider = ({children}) => {
+export const DataProvider = ({ children }) => {
+  const [initialState, dispatch] = useReducer(datareducer, {
+    posts: [],
+    users: [],
+    bookmarks: [],
+  });
 
-    useEffect(() => {
-        fetchBooksData();
-        getBooksData();
-      }, []);
-    
-      const fetchBooksData = async () => {
-        try {
-          const { data } = await axios.get("/api/posts");
-          dispatch({type: "FETCH_POSTS_DATA", payload: data.posts})
-        }catch (error){
-          console.error(error);
-        }
-      };
+  const { user, setUser } = useContext(AuthContext);
 
-      const getBooksData = async() => {
-        try{
-          const { data } = await axios.get("/api/users");
-          dispatch({type: "FETCH_USERS_DATA", payload: data.users})
-        }catch(error){
-          console.error(error);
+  const [trending, setTrending] = useState(false);
+  const [latest, setLatest] = useState(false);
+
+  const [editModal, setEditModal] = useState({
+    modalState: false,
+    postId: "",
+  });
+
+  const likePost = async (encodedToken, postId) => {
+    try {
+      const res = await axios.post(
+        `/api/posts/like/${postId}`,
+        {},
+        {
+          headers: { authorization: encodedToken },
         }
+      );
+      dispatch({ type: "ALL_POSTS", payload: res.data.posts });
+      LikePost();
+    } catch (error) {
+      console.error(error);
+      HandleApiError();
+    }
+  };
+
+  const dislikePost = async (encodedToken, postId) => {
+    try {
+      const res = await axios.post(
+        `/api/posts/dislike/${postId}`,
+        {},
+        {
+          headers: { authorization: encodedToken },
+        }
+      );
+      dispatch({ type: "ALL_POSTS", payload: res.data.posts });
+      DisLikePost();
+    } catch (error) {
+      console.error(error);
+      HandleApiError();
+    }
+  };
+
+  const deletePost = async (encodedToken, postId) => {
+    try {
+      const res = await axios.delete(`/api/posts/${postId}`, {
+        headers: { authorization: encodedToken },
+      });
+      dispatch({ type: "ALL_POSTS", payload: res?.data?.posts });
+      DeletePost();
+    } catch (error) {
+      console.error(error);
+      HandleApiError();
+    }
+  };
+
+  const allBookmark = async (encodedToken) => {
+    try {
+      const res = await axios.get("/api/users/bookmark/", {
+        headers: { authorization: encodedToken },
+      });
+      dispatch({ type: "ALL-BOOKMARKS", payload: res?.data?.bookmarks });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const addToBookmark = async (encodedToken, postId) => {
+    try {
+      const res = await axios.post(
+        `/api/users/bookmark/${postId}`,
+        {},
+        {
+          headers: { authorization: encodedToken },
+        }
+      );
+      dispatch({ type: "ALL-BOOKMARKS", payload: res?.data?.bookmarks });
+      AddInBookmark();
+    } catch (error) {
+      console.error(error);
+      HandleApiError();
+    }
+  };
+
+  const removeFromBookmark = async (encodedToken, postId) => {
+    try {
+      const res = await axios.post(
+        `/api/users/remove-bookmark/${postId}`,
+        {},
+        {
+          headers: { authorization: encodedToken },
+        }
+      );
+      dispatch({ type: "ALL-BOOKMARKS", payload: res?.data?.bookmarks });
+      RemoveBookmark();
+    } catch (error) {
+      console.error(error);
+      HandleApiError();
+    }
+  };
+
+  const followUser = async (encodedToken, followUserId) => {
+    try {
+      const res = await axios.post(
+        `/api/users/follow/${followUserId}`,
+        {},
+        {
+          headers: { authorization: encodedToken },
+        }
+      );
+      setUser(res.data.user);
+      FollowUser();
+    } catch (error) {
+      console.error(error);
+      HandleApiError();
+    }
+  };
+
+  const unfollowUser = async (encodedToken, followUserId) => {
+    try {
+      const res = await axios.post(
+        `/api/users/unfollow/${followUserId}`,
+        {},
+        {
+          headers: { authorization: encodedToken },
+        }
+      );
+      setUser(res.data.user);
+      UnFollowUser();
+    } catch (error) {
+      console.error(error);
+      HandleApiError();
+    }
+  };
+
+  const editUser = async (userData, encodedToken, setEditUserModal) => {
+    try {
+      const res = await axios.post(
+        "/api/users/edit",
+        { userData },
+        {
+          headers: { authorization: encodedToken },
+        }
+      );
+      if (res.status === 201) {
+        setUser(res.data.user);
+        dispatch({ type: "UPDATE-USER-IN-USERS", payload: res.data.user });
+        localStorage.setItem("user", JSON.stringify(res.data.user));
+        setEditUserModal(false);
+        UpdateUser(res.data.user);
       }
+    } catch (error) {
+      console.error(error);
+      HandleApiError();
+    }
+  };
 
-      const initialState = {postsData: [], usersData: []}
+  const handleBookmark = initialState.posts.filter((item) =>
+    initialState.bookmarks.includes(item._id)
+  );
 
-      const reducerFunction = (state, action) => {
+  const inBookmark = (postId) => {
+    return handleBookmark.find((item) => item._id === postId);
+  };
 
-        switch(action.type){
-            case "FETCH_POSTS_DATA":
-                return {...state, postsData: action.payload};
-                case "FETCH_USERS_DATA":
-                  return {...state, usersData: action.payload};
-            default :
-            return state;
-        }
+  const { posts } = initialState;
 
-      }
+  const showFeedPost = posts?.filter(
+    (item) =>
+      item?.username === user?.username ||
+      user?.following?.some(
+        (followingItem) => followingItem?.username === item?.username
+      )
+  );
 
-      const [state, dispatch] = useReducer(reducerFunction, initialState);
+  const trendingPost = trending
+    ? showFeedPost.sort((a, b) => b.likes.likeCount - a.likes.likeCount)
+    : showFeedPost;
 
-      const values = {state, dispatch}
+  const recentPosts = latest
+    ? trendingPost.sort(
+        (a, b) => Date.parse(a.createdAt) - Date.parse(b.createdAt)
+      )
+    : trendingPost;
 
-      console.log(state.postsData);
+  const handleEdit = (userName) => userName === user.username;
 
-    return(
-        <DataContext.Provider value = {values}>
-            {children}
-        </DataContext.Provider>
-    )
+  useEffect(() => {
+    getAllUsers(dispatch);
+    allPosts(dispatch);
+  }, []);
 
-}
+  const values = {
+    handleEdit,
+    initialState,
+    dispatch,
+    handleBookmark,
+    inBookmark,
+    allBookmark,
+    addToBookmark,
+    removeFromBookmark,
+    deletePost,
+    likePost,
+    dislikePost,
+    followUser,
+    unfollowUser,
+    recentPosts,
+    setLatest,
+    setTrending,
+    editModal,
+    setEditModal,
+    editUser,
+  };
+  return (
+    <>
+      <DataContext.Provider value={values}> {children} </DataContext.Provider>
+    </>
+  );
+};

@@ -1,3 +1,9 @@
+// 1. map over posts array, 
+// 2. pass username into a function
+// 3. match that passed username with the username of every user in users array.
+// 4. Store that single object and return.
+
+import { v4 as uuid } from "uuid";
 import { formatDate } from "../utils/authUtils";
 
 /**
@@ -7,288 +13,140 @@ import { formatDate } from "../utils/authUtils";
 
 export const posts = [
   {
-    _id: 101,
+    _id: uuid(),
     content:
-      "It's never too late to start and take control of your life",
-      mediaURL: "",
-      likes: {
+      "At some point, we all have to choose between what the world wants you to be and who you are.",
+    likes: {
       likeCount: 4,
       likedBy: [],
       dislikedBy: [],
     },
-    comments: [
-      {
-        _id: 201,
-        username: "paulsmith",
-        text: "Yes, that is true",
-        votes: {
-          upvotedBy: [],
-          downvotedBy: [],
-        },
-      },
-    ],
-    username: "saharibagothula",
-    createdAt: "2023-02-10T10:55:07+05:30",
+    username: "adarshbalika",
+    postImage: "../postspicture/blackwidow1.jpeg",
+    createdAt: new Date("August 30, 2021 03:15:30"),
     updatedAt: formatDate(),
   },
   {
-    _id: 102,
-    content:
-      "Every day is a chance to get better don't waste it",
-      mediaURL: "",
-      likes: {
+    _id: uuid(),
+    content: "I am sorry. That was... odd.",
+    likes: {
       likeCount: 3,
       likedBy: [],
       dislikedBy: [],
     },
-    comments: [],
-    username: "gaurgopaldas",
-    createdAt: "2023-02-10T10:55:07+05:30",
+    username: "vision",
+    postImage: "../postspicture/vision1.jpeg",
+    createdAt: new Date("August 23, 2001 02:15:30"),
     updatedAt: formatDate(),
   },
   {
-    _id: 103,
-    content:
-      "Push yourself because no one else is going to do it for you",
-      mediaURL: "",
-      likes: {
-      likeCount: 4,
+    _id: uuid(),
+    content: "Move, Captain. I won't ask a second time.",
+    likes: {
+      likeCount: 7,
       likedBy: [],
       dislikedBy: [],
     },
-    comments: [
-      {
-        _id: 203,
-        username: "jayshetty",
-        text: "Yes, that is true",
-        votes: {
-          upvotedBy: [],
-          downvotedBy: [],
-        },
-      },
-    ],
-    username: "paulsmith",
-    createdAt: "2023-02-10T10:55:07+05:30",
+    username: "t'challa",
+    postImage: "../postspicture/blackpanther2.jpeg",
+    createdAt: new Date("August 03, 2022 02:05:04"),
     updatedAt: formatDate(),
   },
   {
-    _id: 104,
+    _id: uuid(),
     content:
-      "There is no excuse for not trying",
-      mediaURL: "",
-      likes: {
-      likeCount: 6,
+      "Captain Rogers! I know you believe that what you are doing is right, but for the collective good, you must surrender now.",
+    likes: {
+      likeCount: 5,
       likedBy: [],
       dislikedBy: [],
     },
-    comments: [],
-    username: "saharibagothula",
-    createdAt: "2023-02-10T10:55:07+05:30",
+    username: "vision",
+    postImage: "../postspicture/vision2.webp",
+    createdAt: new Date("July 12, 2021 03:15:30"),
+    updatedAt: formatDate(),
+  },
+
+  {
+    _id: uuid(),
+    content: "I am Iron man.",
+    likes: {
+      likeCount: 2999,
+      likedBy: [],
+      dislikedBy: [],
+    },
+    username: "tonystark",
+    postImage: "../postspicture/ironman2.jpg",
+    createdAt: new Date("Jun 20, 2022 07:05:30"),
+    updatedAt: formatDate(),
+  },
+
+  {
+    _id: uuid(),
+    content: "I can do this all day.",
+    likes: {
+      likeCount: 1200,
+      likedBy: [],
+      dislikedBy: [],
+    },
+    username: "steverogers",
+    postImage: "../postspicture/captain2.avif",
+    createdAt: new Date("December 28, 2022 01:15:30"),
     updatedAt: formatDate(),
   },
   {
-    _id: 105,
+    _id: uuid(),
     content:
-      "Be there for others, but never leave yourself behind",
-      mediaURL: "",
-      likes: {
-      likeCount: 2,
+      "The Black Panther has been a protector of Wakanda for generations. And now, it is time to show the outside world who we are.",
+    likes: {
+      likeCount: 1300,
       likedBy: [],
       dislikedBy: [],
     },
-    comments: [
-      {
-        _id: 205,
-        username: "gaurgopaldas",
-        text: "Yes, that is true",
-        votes: {
-          upvotedBy: [],
-          downvotedBy: [],
-        },
-      },
-      {
-        _id: 205,
-        username: "paulsmith",
-        text: "That's true",
-        votes: {
-          upvotedBy: [],
-          downvotedBy: [],
-        },
-      },
-    ],
-    username: "saharibagothula",
-    createdAt: "2023-02-10T10:55:07+05:30",
+    username: "t'challa",
+    postImage: "../postspicture/blackpanther1.jpeg",
+    createdAt: new Date("June 27, 2023 03:15:30"),
     updatedAt: formatDate(),
   },
   {
-    _id: 106,
-    content:
-      "The harder you work the better you get",
-      mediaURL: "",
-      likes: {
-      likeCount: 6,
+    _id: uuid(),
+    content: "AVENGERS! ASSEMBLE.",
+    likes: {
+      likeCount: 9999,
       likedBy: [],
       dislikedBy: [],
     },
-    comments: [],
-    username: "saharibagothula",
-    createdAt: "2023-02-10T10:55:07+05:30",
+    username: "steverogers",
+    postImage: "../postspicture/avengers-assemble.jpg",
+    createdAt: new Date("November 20, 2022 03:15:30"),
     updatedAt: formatDate(),
   },
   {
-    _id: 107,
-    content:
-      "Believe in yourself and anything is possible",
-      mediaURL: "",
-      likes: {
-      likeCount: 6,
+    _id: uuid(),
+    content: "Billionaire Genius Playboy Philanthropist.",
+    likes: {
+      likeCount: 2243,
       likedBy: [],
       dislikedBy: [],
     },
-    comments: [],
-    username: "saharibagothula",
-    createdAt: "2023-02-10T10:55:07+05:30",
+    username: "tonystark",
+    postImage: "../postspicture/ironman1.webp",
+    createdAt: new Date("February 27, 2023 03:15:30"),
     updatedAt: formatDate(),
   },
+
   {
-    _id: 108,
+    _id: uuid(),
     content:
-      "Do the best you can until you know better. Then when you know better do better",
-      mediaURL: "",
-      likes: {
-      likeCount: 6,
+      "You don’t know everything about me. The Avengers weren’t my first family.",
+    likes: {
+      likeCount: 2300,
       likedBy: [],
       dislikedBy: [],
     },
-    comments: [],
-    username: "saharibagothula",
-    createdAt: "2023-02-10T10:55:07+05:30",
+    username: "adarshbalika",
+    postImage: "../postspicture/blackwidow2.webp",
+    createdAt: new Date("May 30, 2023 03:15:30"),
     updatedAt: formatDate(),
   },
-  {
-    _id: 109,
-    content:
-      "If you are always trying to be normal you will never know how amazing you can be",
-      mediaURL: "",
-      likes: {
-      likeCount: 6,
-      likedBy: [],
-      dislikedBy: [],
-    },
-    comments: [
-      {
-        _id: 209,
-        username: "selenawilliams",
-        text: "Yes, that is true",
-        votes: {
-          upvotedBy: [],
-          downvotedBy: [],
-        },
-      },
-    ],
-    username: "saharibagothula",
-    createdAt: "2023-02-10T10:55:07+05:30",
-    updatedAt: formatDate(),
-  },
-  {
-    _id: 110,
-    content:
-      "Fear kills more dreams than failure ever will",
-      mediaURL: "",
-      likes: {
-      likeCount: 6,
-      likedBy: [],
-      dislikedBy: [],
-    },
-    comments: [
-      {
-        _id: 210,
-        username: "paulsmith",
-        text: "Yes, that is true",
-        votes: {
-          upvotedBy: [],
-          downvotedBy: [],
-        },
-      },
-    ],
-    username: "alexmaxwell",
-    createdAt: "2023-02-10T10:55:07+05:30",
-    updatedAt: formatDate(),
-  },
-  {
-    _id: 111,
-    content:
-      "Start from where you can",
-      mediaURL: "",
-      likes: {
-      likeCount: 6,
-      likedBy: [],
-      dislikedBy: [],
-    },
-    comments: [
-      {
-        _id: 210,
-        username: "saharibagothula",
-        text: "Yes, that is true",
-        votes: {
-          upvotedBy: [],
-          downvotedBy: [],
-        },
-      },
-    ],
-    username: "selenawilliams",
-    createdAt: "2023-02-10T10:55:07+05:30",
-    updatedAt: formatDate(),
-  },
-  {
-    _id: 112,
-    content:
-      "Fear kills more dreams than failure ever will",
-      mediaURL: "",
-      likes: {
-      likeCount: 6,
-      likedBy: [],
-      dislikedBy: [],
-    },
-    comments: [],
-    username: "saharibagothula",
-    createdAt: "2023-02-10T10:55:07+05:30",
-    updatedAt: formatDate(),
-  },
-  {
-    _id: 113,
-    content:
-      "Don't wait for the right time to start",
-      mediaURL: "",
-      likes: {
-      likeCount: 6,
-      likedBy: [],
-      dislikedBy: [],
-    },
-    comments: [],
-    username: "jayshetty",
-    createdAt: "2023-02-10T10:55:07+05:30",
-    updatedAt: formatDate(),
-  },
-  {
-    _id: 114,
-    content:
-      "You don't have to be great to start, but you have to start to be great",
-      mediaURL: "",
-      likes: {
-      likeCount: 6,
-      likedBy: [],
-      dislikedBy: [],
-    },
-    comments: [],
-    username: "alexmaxwell",
-    createdAt: "2023-02-10T10:55:07+05:30",
-    updatedAt: formatDate(),
-  }
 ];
-
-
-// 1. map over posts array, 
-// 2. pass username into a function
-// 3. match that passed username with the username of every user in users array.
-// 4. Store that single object and return.

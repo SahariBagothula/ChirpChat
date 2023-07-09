@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./LeftNavbar.css";
 
 const LeftNavbar = () => {
@@ -6,10 +6,10 @@ const LeftNavbar = () => {
     return(
         <>
           <div className="leftNavbarDivCard">
-            <p><Link to="/home">Home</Link></p>
-            <p><Link to="/explore">Explore</Link></p>
-            <p><Link to="/bookmarkedPosts">Bookmark</Link></p>
-            <p><Link to="/likedPosts">Liked posts</Link></p>
+            <p><NavLink to="/home">Home</NavLink></p>
+            <p><NavLink to="/explore">Explore</NavLink></p>
+            <p><NavLink to="/bookmarkedPosts">Bookmark</NavLink></p>
+            <p><NavLink to="/signIn">Logout</NavLink></p>
             <p><button>POST</button></p>
         </div>
         </>
