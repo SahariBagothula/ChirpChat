@@ -57,7 +57,7 @@ export const posts = [
     content:
       "Success usually comes to those who are busy looking for it.",
     likes: {
-      likeCount: 34,
+      likeCount: 3894,
       likedBy: [],
       dislikedBy: [],
     },
