@@ -20,7 +20,7 @@ export const users = [
     profilePicture:
       "https://cdn-icons-png.flaticon.com/128/1661/1661081.png",
     bio: "Adarsh Balika, the web developer.",
-    link: "https://github.com/vishalsoni7?tab=repositories",
+    link: "https://github.com/SahariBagothula",
   },
   {
     _id: uuid(),
@@ -36,7 +36,7 @@ export const users = [
     profilePicture:
       "https://cdn-icons-png.flaticon.com/128/8164/8164588.png",
     bio: "Dyslexic, minimalist, loves conde3nsed milk!",
-    link: "https://github.com/vishalsoni7?tab=repositories",
+    link: "https://github.com/SahariBagothula",
   },
   {
     _id: uuid(),
@@ -52,7 +52,7 @@ export const users = [
     profilePicture:
       "https://cdn-icons-png.flaticon.com/128/145/145867.png",
     bio: "Currently dreaming",
-    link: "https://github.com/vishalsoni7?tab=repositories",
+    link: "https://github.com/SahariBagothula",
   },
 
   {
@@ -69,7 +69,7 @@ export const users = [
     profilePicture:
       "https://cdn-icons-png.flaticon.com/128/10359/10359390.png",
     bio: "Fashion | Lifestyle | Photography",
-    link: "https://github.com/vishalsoni7?tab=repositories",
+    link: "https://github.com/SahariBagothula",
   },
   {
     _id: uuid(),
@@ -85,6 +85,6 @@ export const users = [
     profilePicture:
       "https://cdn-icons-png.flaticon.com/128/949/949561.png",
     bio: "YouTuber | Blogger | Actor | Mess-er-up-er",
-    link: "https://github.com/vishalsoni7?tab=repositories",
+    link: "https://github.com/SahariBagothula",
   },
 ];

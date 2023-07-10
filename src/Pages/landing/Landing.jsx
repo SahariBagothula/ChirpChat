@@ -17,24 +17,13 @@ export const Landing = () => {
   };
 
   return (
-    <div className="landing-parent-div">
+    <div className="landingPageCard">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlpnKaIL-cjHY8fSCp1e6_I4sHGHOzJf8LS9KCWepCr1jacKPNt_WBuKDoHg9rxeGgghw&usqp=CAU" alt="landing"/>
       <div className="landing-container">
         <h1 className="landing-heading">ChirpChat</h1>
         <h3>Connecting people across the globe...</h3>
 
-        {/* <h1>
-          FOLLOW{" "}
-          <span className="landing-sub-title"> PEOPLE AROUND THE GLOBE </span>
-        </h1>
-        <h1>
-          CONNECT <span className="landing-sub-title">WITH YOUR LOVED ONE</span>
-        </h1>
-        <h1>
-          SHARE <span className="landing-sub-title">WHAT'S IN MIND</span>
-        </h1> */}
-
-        <div className="landing-btn-div">
+        <div>
           <NavLink to="/signup">
             <button className="landing-btn"> Join Now</button>
           </NavLink>

@@ -7,7 +7,7 @@ import { EditPost } from "./EditPost";
 import "./Feed.css";
 import "../explore/Explore.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash, faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { AuthenticationContext } from "../../context/AuthenticationContext";
 
 export const Feed = () => {

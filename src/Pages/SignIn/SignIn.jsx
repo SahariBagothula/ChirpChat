@@ -43,7 +43,7 @@ export const SignIn = () => {
       {" "}
       <NavLink className="signin-page-link" to="/">
         {" "}
-        <h1 style={{ marginTop: "0" }}> Pixyverse </h1>{" "}
+        <h1 style={{ marginTop: "0" }}> ChirpChat </h1>{" "}
       </NavLink>
       <div className="signin-container">
         <div>

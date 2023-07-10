@@ -52,11 +52,6 @@
     rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
 }
 
-.signup-btn:hover {
-  transition: 0.3s;
-  box-shadow: inset 0em 0em 0em 50em rgba(0, 0, 0, 0.3);
-}
-
 .signup-page-link {
   text-decoration: none;
   color: white;

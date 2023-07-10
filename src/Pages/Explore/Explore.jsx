@@ -39,7 +39,7 @@ export const Explore = () => {
   return (
     <div>
       <div className="All-heading-div">
-        <h3>Explore Pixyverse</h3>
+        <h3>ChirpChat</h3>
       </div>
       <div className="explore-parent-div">
         <div>

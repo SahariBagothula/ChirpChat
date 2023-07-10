@@ -47,7 +47,7 @@ export const SignUp = () => {
     <div className="signup-parent-div">
       <NavLink className="signin-page-link" to="/">
         {" "}
-        <h1 style={{ marginTop: "0" }}> Pixyverse </h1>{" "}
+        <h1 style={{ marginTop: "0" }}> ChirpChat </h1>{" "}
       </NavLink>
       <div className="signup-container">
         <h2>
